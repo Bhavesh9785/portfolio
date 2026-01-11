@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bhavesh - Developer portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #051356;
+        color: white;
+        font-family: "Poppins", sans-serif;
+      }
+      nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px 50px;
+        height: 80px;
+        background-color: #040a32;
+      }
+      nav ul {
+        justify-content: center;
+        display: flex;
+        gap: 30px;
+      }
+      nav ul li {
+        list-style: none;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+      }
+      nav ul li a:hover {
+        color: rgb(215, 71, 10);
+        font-size: 18px;
+        text-decoration-thickness: inherit;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        
+      }
+      .left {
+        font-size: 30px;
+        text-transform: uppercase;
+        text-shadow: #7f5af0;
+        text-align: center;
+        /* font-weight: 700; */
+      }
+      .right{
+        font-size: 20px;
+      }
+      .firstsection {
+        display: flex;
+        justify-content: space-around;
+        margin: 80px 0;
+        
+      }
+      .firstsection > div {
+        width: 30%;
+      }
+      .leftSection {
+        font-size: 38px;
+        margin: 125px 0;
+        font-weight: 600;
+        line-height: 1.4;
+        position: relative;
+        z-index: 1;
+        overflow: visible;
+      }
+      .leftSection::before {
+        margin: -15px 0;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 500px;
+        height: 300px;
+        background-image: url('bhavesh.jpeg');
+        background-size: cover;
+        background-position: 20px 2px;
+        /* border-radius: 100%; */
+        opacity: 0.25;
+        z-index: -1;
+        pointer-events: none;
+      }
+      .rightSection img {
+        width: 100%;
+      }
+      .purple {
+        color: #7f5af0;
+      }
+      #element {
+        color: #7f5af0;
+      }
+     
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="left">Bhavesh's Portfolio</div>
+        <div class="right">
+          <ul>
+            <li><a href="/"> Home </a></li>
+            <li><a href="/"> About </a></li>
+            <li><a href="/"> Projects </a></li>
+            <li><a href="/"> Contact </a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="firstsection">
+        <div class="leftSection">
+          Hi, My name is <span class="purple">Bhavesh</span>
+          <div>and I am a passionate</div>
+            <span id="element"></span>
+            </div>
+
+        </div>
+        <div class="rightSection"><img src="bg.png" alt="bg"></div>
+      </section>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+     <!-- Setup and start animation! -->
+  <script>
+    var typed = new Typed('#element', {
+      strings: ['Web Developer', 'Graphics Designer', 'Video Editor', 'Content Creator'],
+      loop: true,
+      typeSpeed: 50,
+    });
+  </script>
+  </body>
+</html>
