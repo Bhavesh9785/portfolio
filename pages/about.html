@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- About page meta & head -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Bhavesh — Data Scientist</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Animate.css -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS (shared) -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <!-- =====================================================
+       NAVBAR — same structure, paths adjusted for /pages/
+  ===================================================== -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="../index.html">
+          <span class="brand-text">Portfolio</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+          aria-controls="navMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="skills.html">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="certification.html">Certifications</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- =====================================================
+       PAGE HEADER — decorative banner
+  ===================================================== -->
+    <section class="page-header">
+      <div class="bg-orb orb1"></div>
+      <div class="bg-orb orb2"></div>
+      <div class="container">
+        <h1 class="page-title animate__animated animate__fadeInDown">
+          About <span>Me</span>
+        </h1>
+        <div class="section-divider animate__animated animate__fadeIn"></div>
+        <p class="page-subtitle animate__animated animate__fadeInUp">
+          Know more about my journey, background, and what drives me.
+        </p>
+      </div>
+    </section>
+
+    <!-- =====================================================
+       ABOUT SECTION
+  ===================================================== -->
+    <section class="about-section">
+      <div class="container">
+        <div class="row gy-5 align-items-start">
+          <!-- LEFT: Profile image + quick info -->
+          <div class="col-lg-4 col-md-12 text-center text-lg-start reveal">
+            <!-- 
+            PROFILE IMAGE — same as homepage
+            Place bhavesh.png in portfolio/assets/
+            Path from pages/ folder → ../assets/bhavesh.png
+          -->
+            <div class="d-flex justify-content-center mb-4">
+              <div class="img-ring-wrapper" style="width: 260px; height: 260px">
+                <div class="ring-glow"></div>
+                <img
+                  src="../assets/bhavesh.png"
+                  alt="Bhavesh"
+                  class="profile-img"
+                  style="width: 235px; height: 235px"
+                  onerror="
+                    this.src =
+                      'https://ui-avatars.com/api/?name=Bhavesh&size=300&background=0a0f2c&color=00f5ff&bold=true'
+                  "
+                />
+              </div>
+            </div>
+
+            <!-- Quick info list -->
+            <div class="glow-card p-3 text-start">
+              <div class="info-item">
+                <span class="info-label">Name:</span
+                ><span class="info-value">Bhavesh Jangid</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Role:</span
+                ><span class="info-value">Data Scientist</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Location:</span
+                ><span class="info-value">jaipur, Rajasthan, India</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Email:</span
+                ><span class="info-value">bhaveshjangid309@email.com</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Availability:</span
+                ><span class="info-value" style="color: #22c55e"
+                  >Open to Work ✓</span
+                >
+              </div>
+            </div>
+
+            <!-- Download CV button -->
+            <div
+              class="mt-4 d-flex gap-3 justify-content-center justify-content-lg-start flex-wrap"
+            >
+              <a href="../assets/bhavesh_cv.pdf" download class="btn-glow">
+                <i class="bi bi-download me-2"></i>Download CV
+              </a>
+              <a href="contact.html" class="btn-outline-glow">Hire Me</a>
+            </div>
+          </div>
+          <!-- END LEFT -->
+
+          <!-- RIGHT: Bio + Education + Experience -->
+          <div class="col-lg-8 col-md-12">
+            <!-- Bio paragraph -->
+            <div class="reveal mb-5">
+              <h2
+                class="text-gradient"
+                style="
+                  font-family: var(--font-display);
+                  font-size: 1.6rem;
+                  margin-bottom: 1rem;
+                "
+              >
+                Who Am I?
+              </h2>
+              <p
+                style="
+                  color: var(--muted);
+                  font-size: 1.05rem;
+                  line-height: 1.8;
+                "
+              >
+                I'm <strong style="color: var(--white)">Bhavesh</strong>, a
+                passionate Data Scientist with hands-on experience building
+                machine learning models, analysing complex datasets, and
+                deploying AI solutions that solve real-world problems. I thrive
+                at the intersection of
+                <strong style="color: var(--cyan)">data, math, and code</strong
+                >.
+              </p>
+              <p
+                style="
+                  color: var(--muted);
+                  font-size: 1.05rem;
+                  line-height: 1.8;
+                  margin-top: 1rem;
+                "
+              >
+                Whether it's predicting customer churn, building NLP pipelines,
+                or creating interactive dashboards — I turn raw numbers into
+                stories and strategies. I'm always learning, always building,
+                and always ready for the next challenge.
+              </p>
+            </div>
+
+            <!-- Education Timeline -->
+            <div class="reveal mb-5">
+              <h3
+                style="
+                  font-family: var(--font-display);
+                  font-size: 1rem;
+                  color: var(--cyan);
+                  letter-spacing: 3px;
+                  margin-bottom: 1.5rem;
+                "
+              >
+                <i class="bi bi-mortarboard me-2"></i>EDUCATION
+              </h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <p class="timeline-year">2024 — 2028</p>
+                  <p class="timeline-title">
+                    B.Tech in Computer Science Engineering
+                  </p>
+                  <p class="timeline-place">
+                    bikaner technical university ,Rajasthan, India
+                  </p>
+                </div>
+                <div class="timeline-item">
+                  <p class="timeline-year">2021 — 2023</p>
+                  <p class="timeline-title">
+                    Higher Secondary Education (Science — PCM)
+                  </p>
+                  <p class="timeline-place">
+                    A ONE EDUCATION ACADEMY SR SEC SCHOOL SHRIMADHOPUR, India
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience Timeline -->
+            <div class="reveal">
+              <h3
+                style="
+                  font-family: var(--font-display);
+                  font-size: 1rem;
+                  color: var(--cyan);
+                  letter-spacing: 3px;
+                  margin-bottom: 1.5rem;
+                "
+              >
+                <i class="bi bi-briefcase me-2"></i>EXPERIENCE
+              </h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <p class="timeline-year">2025</p>
+                  <p class="timeline-title">Web Development Intern (45 Days)</p>
+                  <p class="timeline-place">Virtual Internship Program</p>
+                  <p
+                    style="
+                      color: var(--muted);
+                      font-size: 0.9rem;
+                      margin-top: 0.3rem;
+                    "
+                  >
+                    Developed responsive websites using HTML, CSS, JavaScript,
+                    and Bootstrap while gaining experience in front-end
+                    development and UI design.
+                  </p>
+                  <!-- <p class="timeline-year">2026 — Present</p>
+                <p class="timeline-title">Data Science Intern</p>
+                <p class="timeline-place">Tech Startup, Remote</p>
+                <p style="color:var(--muted);font-size:0.9rem;margin-top:0.3rem;">
+                  Built ML pipelines, created Power BI dashboards, and automated ETL workflows.
+                </p> -->
+                </div>
+                <div class="timeline-item">
+
+                    <p class="timeline-year">2026</p>
+    <p class="timeline-title">Data Science Intern (30 Days)</p>
+    <p class="timeline-place">Virtual Internship Program</p>
+    <p style="color:var(--muted);font-size:0.9rem;margin-top:0.3rem;">
+      Worked on data analysis, data visualization, and machine learning fundamentals using Python, Pandas, and Scikit-learn.
+    </p>
+                  <!-- <p class="timeline-year">2026</p>
+                  <p class="timeline-title">Python & ML Freelancer</p>
+                  <p class="timeline-place">Upwork / Fiverr</p>
+                  <p
+                    style="
+                      color: var(--muted);
+                      font-size: 0.9rem;
+                      margin-top: 0.3rem;
+                    "
+                  >
+                    Completed 10+ client projects including sentiment analysis,
+                    forecasting, and data cleaning.
+                  </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END RIGHT -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer text-center py-3">
+      <p>
+        <span class="accent">Bhavesh Jangid</span> — Data Scientist ,Web
+        Developer.
+        <i class="bi bi-heart-fill text-danger"></i>
+      </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

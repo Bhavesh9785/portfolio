@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =====================================================
+       CERTIFICATIONS PAGE
+       - Shows all professional certifications
+       - Filterable by category (ML, Python, Cloud, etc.)
+       - Each card links to the official credential URL
+       - Fully responsive (Bootstrap 5 grid)
+  ===================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certifications | Bhavesh — Data Scientist</title>
+
+  <!-- Bootstrap 5 — grid, utilities -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons — used inside cards -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <!-- Animate.css — page header animation -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+  <!-- Google Fonts — Orbitron + Rajdhani -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <!-- Our shared stylesheet (includes cert-specific styles at bottom) -->
+  <link rel="stylesheet" href="../css/style.css"/>
+</head>
+
+<body>
+
+  <!-- =====================================================
+       NAVBAR
+       Paths use ../ because this file lives inside pages/
+       Certifications link is .active on this page
+  ===================================================== -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+      <!-- Brand — goes to homepage -->
+      <a class="navbar-brand fw-bold" href="../index.html">
+        <span class="brand-text">Portfolio</span>
+      </a>
+
+      <!-- Mobile hamburger — Bootstrap handles toggle via data-bs-* -->
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav links — JS highlights active one via URL match -->
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <!-- .active → underline shown on this page -->
+          <li class="nav-item"><a class="nav-link active" href="certification.html">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END NAVBAR -->
+
+  <!-- =====================================================
+       PAGE HEADER
+       - Decorative top banner with animated text
+       - .bg-orb divs = floating CSS glow blobs (from style.css)
+       - animate__* classes trigger on load (Animate.css)
+  ===================================================== -->
+  <section class="page-header">
+    <div class="bg-orb orb1"></div>
+    <div class="bg-orb orb2"></div>
+    <div class="container">
+      <h1 class="page-title animate__animated animate__fadeInDown">
+        My <span>Certifications</span>
+      </h1>
+      <!-- Cyan gradient divider bar under title -->
+      <div class="section-divider animate__animated animate__fadeIn"></div>
+      <p class="page-subtitle animate__animated animate__fadeInUp">
+        Verified credentials from globally recognized platforms & institutions.
+      </p>
+    </div>
+  </section>
+  <!-- END PAGE HEADER -->
+
+  <!-- =====================================================
+       CERTIFICATIONS SECTION
+       Structure:
+       ├── cert-stats-row    → summary pill counts
+       ├── filter-tabs       → category filter buttons
+       └── cards grid        → .project-card-wrap[data-category]
+           └── .cert-card    → individual certificate
+
+       Filter logic: JS reads data-filter on tabs, matches
+       data-category on wrappers → hides/shows cards
+  ===================================================== -->
+  <section class="projects-section"><!-- reusing same padding as projects -->
+    <div class="container">
+
+      <!-- ---- Summary stats (pill row) ---- -->
+      <!-- ★ UPDATE: change numbers to match your actual total -->
+      <div class="cert-stats-row reveal">
+        <div class="cert-stat-pill">
+          <i class="bi bi-patch-check-fill"></i>
+          <span><strong>4</strong> Total Certifications</span>
+        </div>
+        <div class="cert-stat-pill">
+          <i class="bi bi-building"></i>
+          <span><strong>3</strong> Issuing Platforms</span>
+        </div>
+        <div class="cert-stat-pill">
+          <i class="bi bi-award"></i>
+          <span><strong>All</strong> Verified & Active</span>
+        </div>
+      </div>
+
+      <!-- ---- Filter tabs ---- -->
+      <!--
+        data-filter value must match data-category on .project-card-wrap
+        JS in main.js handles show/hide on click (initFilters function)
+      -->
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="data">Data Science</button>
+        <button class="filter-tab" data-filter="python">Python</button>
+        <button class="filter-tab" data-filter="web">Web Devlopement</button>
+        <button class="filter-tab" data-filter="skills">Soft Skills</button>
+        <button class="filter-tab" data-filter="hackathon">Hackathon</button>
+      </div>
+      <!-- END FILTER TABS -->
+
+      <!-- ================================================================
+           CERTIFICATE CARDS GRID
+           Each card = one certification
+           ★ UPDATE: Change name, issuer, date, credential URL for each
+           ★ ADD MORE: Copy a col block and update content
+           ================================================================ -->
+      <div class="row gy-4">
+
+        <!-- ============================================================
+             CERT 1: python programming certificate
+             ============================================================ -->
+        <!--
+          data-category="python" → shown when "Python & Data" tab clicked
+          .reveal → JS IntersectionObserver fades it in on scroll
+        -->
+       <div class="col-lg-4 col-md-6 project-card-wrap reveal" data-category="python">
+  <div class="cert-card">
+
+    <div class="cert-ribbon">VERIFIED</div>
+    
+    <img src="../assets/python.jpeg"
+     alt="CodeAlpha Python Certificate"
+     class="certificate-img">
+
+    <div class="cert-header">
+      <div class="cert-icon" style="background:rgba(0,255,255,0.15);color:#00ffff;">
+        🐍
+      </div>
+
+      <div>
+        <p class="cert-issuer">CODEALPHA</p>
+        <h4 class="cert-name">Python Programming Certificate</h4>
+      </div>
+    </div>
+
+    <div class="cert-body">
+
+      <p class="cert-desc">
+        Successfully completed the Python Programming Certification offered by CodeAlpha.
+        Gained hands-on experience in Python fundamentals, object-oriented programming,
+        file handling, data structures, functions, and real-world project development.
+      </p>
+
+      <div class="cert-meta">
+        <span class="cert-meta-item">
+          <i class="bi bi-calendar3"></i> Issued: 2024
+        </span>
+
+        <span class="cert-meta-item">
+          <i class="bi bi-patch-check"></i> Authorized by CodeAlpha
+        </span>
+      </div>
+
+      <div class="cert-skills">
+        <span class="cert-skill-tag">Python</span>
+        <span class="cert-skill-tag">OOP</span>
+        <span class="cert-skill-tag">Data Structures</span>
+        <span class="cert-skill-tag">Problem Solving</span>
+      </div>
+
+      <a href="/assets/python.jpeg" target="_blank" class="cert-btn">
+        <i class="bi bi-shield-check"></i> View Certificate
+      </a>
+
+    </div>
+  </div>
+</div>
+        <!-- END CERT 1 -->
+
+        <!-- ============================================================
+             CERT 2: web development internship certificate
+             ============================================================ -->
+        <div class="col-lg-4 col-md-6 project-card-wrap reveal" data-category="web">
+  <div class="cert-card">
+
+    <div class="cert-ribbon">VERIFIED</div>
+
+      <img src="../assets/Full stack.jpeg"
+     alt="Web Development Internship Certificate"
+     class="certificate-img">
+
+    <div class="cert-header">
+      <div class="cert-icon" style="background:rgba(0,255,255,0.15);color:#00ffff;">
+        💻
+      </div>
+
+      <div>
+        <p class="cert-issuer">UPFLAIRS</p>
+        <h4 class="cert-name">Web Development Internship Certificate</h4>
+      </div>
+    </div>
+
+    <div class="cert-body">
+
+      <p class="cert-desc">
+        Successfully completed a 45-Day Web Development Internship at Upflairs in 2025.
+        Worked on responsive website development using HTML, CSS, JavaScript, Bootstrap,
+        and modern web design practices. Developed real-world projects and gained practical
+        experience in frontend development.
+      </p>
+
+      <div class="cert-meta">
+        <span class="cert-meta-item">
+          <i class="bi bi-calendar3"></i> Issued: 2025
+        </span>
+
+        <span class="cert-meta-item">
+          <i class="bi bi-clock-history"></i> Duration: 45 Days
+        </span>
+      </div>
+
+      <div class="cert-skills">
+        <span class="cert-skill-tag">HTML5</span>
+        <span class="cert-skill-tag">CSS3</span>
+        <span class="cert-skill-tag">JavaScript</span>
+        <span class="cert-skill-tag">Bootstrap</span>
+      </div>
+
+      <a href="/assets/Full stack.jpeg" target="_blank" class="cert-btn">
+        <i class="bi bi-award"></i> View Certificate
+      </a>
+
+    </div>
+  </div>
+</div>
+        <!-- END CERT 2 -->
+
+        <!-- ============================================================
+             CERT 3: Data Science Internship Certificate
+             ============================================================ -->
+       <div class="col-lg-4 col-md-6 project-card-wrap reveal" data-category="data">
+  <div class="cert-card">
+
+    <div class="cert-ribbon">VERIFIED</div>
+
+      <img src="../assets/data science.jpeg"
+     alt="Data Science Internship Certificate"
+     class="certificate-img">
+    <div class="cert-header">
+      <div class="cert-icon" style="background:rgba(0,255,150,0.15);color:#00ff99;">
+        📊
+      </div>
+
+      <div>
+        <p class="cert-issuer">UPFLAIRS</p>
+        <h4 class="cert-name">Data Science Internship Certificate</h4>
+      </div>
+    </div>
+
+    <div class="cert-body">
+
+      <p class="cert-desc">
+        Successfully completed a 30-Day Data Science Internship at Upflairs in 2025.
+        Worked on data analysis, data visualization, machine learning models, and
+        real-world datasets using Python and industry-standard data science tools.
+      </p>
+
+      <div class="cert-meta">
+        <span class="cert-meta-item">
+          <i class="bi bi-calendar3"></i> Issued: 2025
+        </span>
+
+        <span class="cert-meta-item">
+          <i class="bi bi-briefcase"></i> Duration: 30 Days
+        </span>
+      </div>
+
+      <div class="cert-skills">
+        <span class="cert-skill-tag">Python</span>
+        <span class="cert-skill-tag">Pandas</span>
+        <span class="cert-skill-tag">Machine Learning</span>
+        <span class="cert-skill-tag">Data Visualization</span>
+      </div>
+
+      <a href="/assets/data science.jpeg" target="_blank" class="cert-btn">
+        <i class="bi bi-shield-check"></i> View Certificate
+      </a>
+
+    </div>
+  </div>
+</div>
+        <!-- END CERT 3 -->
+
+        <!-- ============================================================
+             CERT 4: for Soft skills tranning 
+             ============================================================ -->
+       <div class="col-lg-4 col-md-6 project-card-wrap reveal" data-category="skills">
+  <div class="cert-card">
+
+    <div class="cert-ribbon">VERIFIED</div>
+
+      <img src="../assets/soft skills.jpeg"
+     alt="Soft Skills Development Certificate"
+     class="certificate-img">
+
+    <div class="cert-header">
+      <div class="cert-icon" style="background:rgba(155,89,182,0.15);color:#9b59b6;">
+        🤝
+      </div>
+
+      <div>
+        <p class="cert-issuer">SANDEEP JAIMAN</p>
+        <h4 class="cert-name">Soft Skills Development Certificate</h4>
+      </div>
+    </div>
+
+    <div class="cert-body">
+
+      <p class="cert-desc">
+        Successfully completed the Soft Skills Development Program under the guidance
+        of Sandeep Jaiman in 2026. The training focused on communication skills,  
+        leadership, teamwork, personality development, problem-solving, and
+        professional workplace behavior.
+      </p>
+
+      <div class="cert-meta">
+        <span class="cert-meta-item">
+          <i class="bi bi-calendar3"></i> Issued: 2026
+        </span>
+
+        <span class="cert-meta-item">
+          <i class="bi bi-award"></i> Certified Program
+        </span>
+      </div>
+
+      <div class="cert-skills">
+        <span class="cert-skill-tag">Communication</span>
+        <span class="cert-skill-tag">Leadership</span>
+        <span class="cert-skill-tag">Teamwork</span>
+        <span class="cert-skill-tag">Problem Solving</span>
+      </div>
+
+      <a href="/assets/soft skills.jpeg" target="_blank" class="cert-btn">
+        <i class="bi bi-shield-check"></i> View Certificate
+      </a>
+
+    </div>
+  </div>
+</div>
+        <!-- END CERT 4 -->
+
+        <!-- ============================================================
+             CERT 5: Microsoft Power BI Data Analyst
+             ============================================================ -->
+        <div class="col-lg-4 col-md-6 project-card-wrap reveal" data-category="hackathon">
+  <div class="cert-card">
+
+    <div class="cert-ribbon">PARTICIPANT</div>
+
+      <img src="../assets/Hackathon.jpeg"
+     alt="Hack Arya Verse 2.0 Certificate"
+     class="certificate-img">
+     
+    <div class="cert-header">
+      <div class="cert-icon" style="background:rgba(255,165,0,0.15);color:#ffa500;">
+        🚀
+      </div>
+
+      <div>
+        <p class="cert-issuer">ARYA COLLEGE OF ENGINEERING & IT</p>
+        <h4 class="cert-name">Hack Arya Verse 2.0</h4>
+      </div>
+    </div>
+
+    <div class="cert-body">
+
+      <p class="cert-desc">
+        Participated in Hack Arya Verse 2.0, a national-level hackathon organized by
+        Arya College of Engineering & IT in March 2026. Collaborated with a team to
+        develop innovative technology solutions, enhance problem-solving abilities,
+        and gain hands-on experience in software development and project presentation.
+      </p>
+
+      <div class="cert-meta">
+        <span class="cert-meta-item">
+          <i class="bi bi-calendar3"></i> March 2026
+        </span>
+
+        <span class="cert-meta-item">
+          <i class="bi bi-trophy"></i> Hackathon Participant
+        </span>
+      </div>
+
+      <div class="cert-skills">
+        <span class="cert-skill-tag">Innovation</span>
+        <span class="cert-skill-tag">Teamwork</span>
+        <span class="cert-skill-tag">Problem Solving</span>
+        <span class="cert-skill-tag">Presentation</span>
+      </div>
+
+      <a href="/assets/Hackathon.jpeg" target="_blank" class="cert-btn">
+        <i class="bi bi-award"></i> View Certificate
+      </a>
+
+    </div>
+  </div>
+</div>
+        <!-- END CERT 5 -->
+
+        
+
+        <!--
+          ★ TO ADD MORE CERTIFICATIONS:
+          Copy the block below, paste after END CERT 8 above,
+          and update: data-category, cert-icon color, issuer,
+          cert-name, cert-desc, dates, skill tags, verify href
+
+          <div class="col-lg-4 col-md-6 project-card-wrap reveal" data-category="CATEGORY">
+            <div class="cert-card">
+              <div class="cert-ribbon">VERIFIED</div>
+              <div class="cert-header">
+                <div class="cert-icon" style="background:rgba(0,245,255,0.15);color:#00f5ff;">EMOJI</div>
+                <div>
+                  <p class="cert-issuer">ISSUER NAME</p>
+                  <h4 class="cert-name">Certificate Title Here</h4>
+                </div>
+              </div>
+              <div class="cert-body">
+                <p class="cert-desc">Short description...</p>
+                <div class="cert-meta">
+                  <span class="cert-meta-item"><i class="bi bi-calendar3"></i> Issued: Mon YYYY</span>
+                  <span class="cert-meta-item"><i class="bi bi-key"></i> ID: YOUR-ID</span>
+                </div>
+                <div class="cert-skills">
+                  <span class="cert-skill-tag">Skill 1</span>
+                  <span class="cert-skill-tag">Skill 2</span>
+                </div>
+                <a href="VERIFY_URL" target="_blank" class="cert-btn">
+                  <i class="bi bi-shield-check"></i> Verify Credential
+                </a>
+              </div>
+            </div>
+          </div>
+        -->
+
+      </div><!-- end row -->
+
+      <!-- ---- Bottom CTA — links to LinkedIn for full list ---- -->
+      <div class="text-center mt-5 reveal">
+        <p style="color:var(--muted);margin-bottom:1rem;">
+          View all credentials on LinkedIn or download my complete CV.
+        </p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <!-- ★ UPDATE href: your LinkedIn certifications page -->
+          <a href="https://linkedin.com/in/bhavesh-jangid/" target="_blank" class="btn-glow">
+            <i class="bi bi-linkedin me-2"></i>View on LinkedIn
+          </a>
+          <a href="../assets/bhavesh_cv.pdf" download class="btn-outline-glow">
+            <i class="bi bi-download me-2"></i>Download CV
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- END CERTIFICATIONS SECTION -->
+
+  <!-- FOOTER — same across all pages -->
+  <footer class="site-footer text-center py-3">
+    <p>
+      &copy; 2024 <span class="accent">Bhavesh</span> — Data Scientist.
+      Built with <i class="bi bi-heart-fill text-danger"></i> & Bootstrap.
+    </p>
+  </footer>
+
+  <!-- =====================================================
+       SCRIPTS
+       Bootstrap JS → navbar toggle
+       main.js → filter tabs (initFilters), scroll reveal, navbar scroll
+  ===================================================== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+
+</body>
+</html>

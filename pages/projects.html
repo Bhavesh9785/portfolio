@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Bhavesh — Data Scientist</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index.html"><span class="brand-text">Portfolio</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navMenu" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+          <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="certification.html">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="bg-orb orb1"></div>
+    <div class="bg-orb orb2"></div>
+    <div class="container">
+      <h1 class="page-title animate__animated animate__fadeInDown">My <span>Projects</span></h1>
+      <div class="section-divider animate__animated animate__fadeIn"></div>
+      <p class="page-subtitle animate__animated animate__fadeInUp">
+        Real-world data science and ML projects I've built.
+      </p>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       PROJECTS SECTION
+       Filter tabs + 8 project cards
+       data-category on each wrapper controls filtering
+  ===================================================== -->
+  <section class="projects-section">
+    <div class="container">
+
+      <!-- Filter tabs — data-filter matches card data-category -->
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="ml">Machine Learning</button>
+        <button class="filter-tab" data-filter="nlp">NLP</button>
+        <!-- <button class="filter-tab" data-filter="cv">Computer Vision</button> -->
+        <!-- <button class="filter-tab" data-filter="viz">Data Viz</button> -->
+        <button class="filter-tab" data-filter="deploy">Deployment</button>
+      </div>
+
+      <!-- Projects grid -->
+      <div class="row gy-4">
+
+        <!-- ---- PROJECT 1: Customer Churn ---- -->
+        <!-- data-category="ml" → shown when ML tab active -->
+        <div class="col-lg-4 col-md-6 project-card-wrap" data-category="ml">
+          <div class="project-card reveal">
+            <!-- Color-coded banner with emoji icon -->
+            <div class="project-banner" style="background:linear-gradient(135deg,#0d1630,#1a3a5c);">
+              <span class="project-banner-icon">📉</span>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Scikit-learn</span>
+                
+              </div>
+              <h4 class="project-title">Customer Churn Predictor</h4>
+              <p class="project-desc">
+                Built a binary classifier to predict telecom customer churn with 94% accuracy.
+                Used SMOTE for class imbalance and SHAP for model explainability.
+              </p>
+              <div class="project-links">
+                <!-- Update href to your actual GitHub repo -->
+                <a href="https://github.com/Bhavesh9785/Major_project_1" target="_blank" class="project-link-btn plb-github">
+                  <i class="bi bi-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- PROJECT 2: School management system  ---- -->
+       <div class="col-lg-4 col-md-6 project-card-wrap" data-category="deploy">
+  <div class="project-card reveal">
+    <div class="project-banner" style="background:linear-gradient(135deg,#0d1a30,#1a4d8f);">
+      <span class="project-banner-icon">🏫</span>
+    </div>
+    <div class="project-body">
+      <div class="project-tags">
+        <span class="project-tag">PHP</span>
+        <span class="project-tag">MySQL</span>
+        <span class="project-tag">Bootstrap</span>
+      </div>
+
+      <h4 class="project-title">School Management System – India</h4>
+
+      <p class="project-desc">
+        Developed a comprehensive School Management System for educational institutions across India.
+        The platform includes role-based access for Super Admin, Admin, Principal, Teachers, and Students.
+        Features include student management, attendance tracking, examination records, fee management,
+        timetable scheduling, and performance analytics through a centralized dashboard.
+      </p>
+
+      <div class="project-links">
+        <a href="https://github.com/Edu-vault2/EduVault" target="_blank" class="project-link-btn plb-github">
+          <i class="bi bi-github"></i> GitHub
+        </a>
+        <a href="https://edu-vault-eight.vercel.app/" class="project-link-btn plb-demo">
+          <i class="bi bi-eye"></i> Live
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!-- ---- PROJECT 3: House Price Prediction ---- -->
+        <div class="col-lg-4 col-md-6 project-card-wrap" data-category="ml">
+          <div class="project-card reveal">
+            <div class="project-banner" style="background:linear-gradient(135deg,#0d2010,#1a3020);">
+              <span class="project-banner-icon">🏠</span>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">LightGBM</span>
+                <span class="project-tag">Optuna</span>
+              </div>
+              <h4 class="project-title">House Price Prediction</h4>
+              <p class="project-desc">
+                End-to-end regression pipeline with feature engineering, cross-validation,
+                and hyperparameter tuning via Optuna. RMSE of 15K on Kaggle dataset.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/Bhavesh9785/House_price_project" target="_blank" class="project-link-btn plb-github">
+                  <i class="bi bi-github"></i> GitHub
+                </a>
+                <!-- <a href="https://kaggle.com/" target="_blank" class="project-link-btn plb-demo">
+                  <i class="bi bi-bar-chart"></i> Kaggle
+                </a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- PROJECT 4: Loan Approval Prediction System ---- -->
+<div class="col-lg-4 col-md-6 project-card-wrap" data-category="ml">
+  <div class="project-card reveal">
+    <div class="project-banner" style="background:linear-gradient(135deg,#1a0d20,#2a1040);">
+      <span class="project-banner-icon">🏦</span>
+    </div>
+
+    <div class="project-body">
+      <div class="project-tags">
+        <span class="project-tag">Python</span>
+        <span class="project-tag">Scikit-Learn</span>
+        <span class="project-tag">Machine Learning</span>
+      </div>
+
+      <h4 class="project-title">Loan Approval Prediction System</h4>
+
+      <p class="project-desc">
+        Developed a machine learning-based loan approval prediction system that analyzes
+        applicant income, credit history, employment status, and loan amount to predict
+        approval eligibility. Achieved 95% model accuracy and improved decision-making
+        through automated risk assessment.
+      </p>
+
+      <div class="project-links">
+        <a href="https://github.com/Bhavesh9785/Loan_approval_project" target="_blank" class="project-link-btn plb-github">
+          <i class="bi bi-github"></i> GitHub
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div><!-- ---- PROJECT 5: Flipkart Review Analyzer ---- -->
+<div class="col-lg-4 col-md-6 project-card-wrap" data-category="nlp">
+  <div class="project-card reveal">
+    <div class="project-banner" style="background:linear-gradient(135deg,#1a1a0d,#2a2010);">
+      <span class="project-banner-icon">🛒</span>
+    </div>
+
+    <div class="project-body">
+      <div class="project-tags">
+        <span class="project-tag">Python</span>
+        <span class="project-tag">NLP</span>
+        <span class="project-tag">Streamlit</span>
+      </div>
+
+      <h4 class="project-title">Flipkart Review Analyzer</h4>
+
+      <p class="project-desc">
+        Built an NLP-powered review analysis system for Flipkart products. The application
+        performs sentiment analysis on customer reviews and provides filtering options for
+        Positive, Negative, and Neutral feedback. Includes review statistics, keyword insights,
+        and interactive visualizations for better product evaluation.
+      </p>
+
+      <div class="project-links">
+        <a href="https://github.com/Bhavesh9785/Flipkart-review-analyzer" target="_blank" class="project-link-btn plb-github">
+          <i class="bi bi-github"></i> GitHub
+        </a>
+        <!-- <a href="#" class="project-link-btn plb-demo">
+          <i class="bi bi-funnel"></i> Filter Reviews
+        </a> -->
+      </div>
+    </div>
+  </div>
+</div>
+       <!-- ---- PROJECT 6: Customer Satisfaction Analysis ---- -->
+<div class="col-lg-4 col-md-6 project-card-wrap" data-category="nlp">
+  <div class="project-card reveal">
+    <div class="project-banner" style="background:linear-gradient(135deg,#1a0d0d,#301020);">
+      <span class="project-banner-icon">😊</span>
+    </div>
+
+    <div class="project-body">
+      <div class="project-tags">
+        <span class="project-tag">NLP</span>
+        <span class="project-tag">Sentiment Analysis</span>
+        <span class="project-tag">Streamlit</span>
+      </div>
+
+      <h4 class="project-title">Customer Satisfaction Analysis</h4>
+
+      <p class="project-desc">
+        Developed an NLP-based customer satisfaction analysis system to evaluate customer
+        feedback and reviews. The model classifies feedback into positive, neutral, and
+        negative sentiments, helping businesses identify service quality trends and improve
+        customer experience through data-driven insights.
+      </p>
+
+      <div class="project-links">
+        <a href="https://github.com/Bhavesh9785/Cust_satisfaction_project" target="_blank" class="project-link-btn plb-github">
+          <i class="bi bi-github"></i> GitHub
+        </a>
+
+        <!-- <a href="#" class="project-link-btn plb-demo">
+          <i class="bi bi-bar-chart"></i> Demo
+        </a> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+       
+
+      </div><!-- end row -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer text-center py-3">
+    <p>
+         <span class="accent">Bhavesh Jangid</span> — Data Scientist ,Web Developer.
+         <i class="bi bi-heart-fill text-danger"></i>
+      </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
